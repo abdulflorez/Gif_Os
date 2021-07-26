@@ -1,0 +1,107 @@
+.search{
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: background-color 0.6s;
+}
+.search__title{
+    margin-top: 6.5rem;
+    font-size: 3.6rem;
+    font-family: var(--font-main);
+    font-weight: 700;
+    line-height: 4.2rem;
+    color: var(--color-main);
+    transition:  color 0.6s;
+}
+.search__img{
+    width: 40rem;
+    height: 19rem;
+    margin-top: 1.4rem;
+}
+.search__container{
+    width: 54rem;
+    height: 5rem;
+    display: flex;
+    position: relative;
+    border-radius: 6.1rem;
+}
+.search__input{
+    width: 84%;
+    height: 100%;
+    padding: 0.5rem 3rem;
+    border: 0.1rem solid #121212;
+    border-right: none;
+    border-radius: 6.1rem 0 0 6.1rem;
+    font-size: 2.4rem;
+    color: var(--color-main);
+    outline: none;
+    transition: background-color 0.6s, color 0.6s;
+}
+.search__input::placeholder{
+    opacity: 0.2;
+}
+.search__btn{
+    width: 16%;
+    height: 100%;
+    border: 0.1rem solid #121212;
+    border-radius: 0 6.1rem 6.1rem 0;
+    background-color: var(--color-main);
+    transition: border 0.6s;
+}
+.search__btn:hover{
+    opacity: 0.9;
+}
+.search__btn--icon{
+    width: 2rem;
+    height: 2rem;
+}
+.search__autocomplete{
+    width: 80.3%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5.1rem;
+    margin-left: 2rem;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    background-color: #fff;
+    /* box-shadow: 0rem 0.5rem 1rem .1rem rgba(87, 46, 229, 0.6); */
+}
+.search__subtitle{
+    margin-top: 7.9rem;
+    margin-bottom: 3rem;
+    font-size: 2.4rem;
+    font-family: var(--font-main);
+    font-weight: 400;
+    line-height: 2.8rem;
+    color: var(--color-main);
+    transition: color 0.6s;
+}
+/*DarkMode*/
+.search.darkmode{
+    background-color: var(--color-darkBG);
+}
+.search__title.darkmode{
+    color: var(--color-darkmain);
+}
+.search__input.darkmode{
+    background-color: var(--color-darkBG);
+    border: 0.1rem solid var(--color-darkmain);
+    color: var(--color-darkmain);
+}
+.search__btn.darkmode{
+    border: 0.1rem solid var(--color-darkmain);
+}
+.search__btn.darkmode:hover{
+    opacity: 0.7;
+}
+.search__autocomplete.darkmode{
+    background-color: var(--color-darkBG);
+    /* box-shadow: 0rem 0.5rem 1rem .1rem rgba(87, 46, 229, 0.6); */
+}
+.search__subtitle.darkmode{
+    color: var(--color-darkmain);
+}
