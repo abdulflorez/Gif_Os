@@ -11,17 +11,18 @@ export function AppProvider(props) {
     const [gifos, setGifos] = useState([]);
     const [textResult, setTextResult ] = useState("Realiza tus busquedas de GIFs")
 
+    const values = {
+        darkMode, setDarkMode,
+        search, setSearch,
+        btn, setBtn,
+        inputSelect, setInputSelect,
+        dataSuggest, setDataSuggest,
+        gifos, setGifos,
+        textResult, setTextResult
+    }
+
     return(
-        <AppContext.Provider value={{darkMode, setDarkMode,
-                                     search, setSearch,
-                                     btn, setBtn,
-                                     inputSelect, setInputSelect,
-                                     dataSuggest, setDataSuggest,
-                                     gifos, setGifos,
-                                     textResult, setTextResult
-                                    }
-                                }
-        >
+        <AppContext.Provider value={values}>
             {props.children}
         </AppContext.Provider>
     )
