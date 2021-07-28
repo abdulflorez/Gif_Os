@@ -3,10 +3,11 @@ import Gif from "../gif/Gif"
 import { request } from '../../utils/URL_requests'
 import { AppContext} from '../../context/AppContext'
 import { useContext, useEffect } from 'react'
+import useDarkTheme from "../../hooks/useDarkTheme"
+
 
 function Results() {
     //GLOBAL states from storages
-    const {darkMode} = useContext(AppContext);
     const {search} = useContext(AppContext)
     const {btn, setBtn} = useContext(AppContext)
     const { setDataSuggest } = useContext(AppContext);
@@ -42,8 +43,8 @@ function Results() {
         return <Gif key={gif.id} redirectingUrl={urlToGiphy} localUrl={urlToRender} title={titleToAlt} />
     })
     //DarkMode conditionals
-    const backGroundDarkMode = darkMode ? "results darkmode" : "results";
-    const textDarkMode = darkMode ? "results__text darkmode" : "results__text";
+    const backGroundDarkMode = useDarkTheme("results");
+    const textDarkMode = useDarkTheme("results__text");
     //conditional to render gifos
     const renderIFGifos = gifos.length > 0
         ? renderGifos

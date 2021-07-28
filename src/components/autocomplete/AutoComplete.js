@@ -1,18 +1,18 @@
 import './autocomplete.css'
 import { AppContext } from '../../context/AppContext'
 import { useContext } from 'react'
+import useDarkTheme from '../../hooks/useDarkTheme';
 
 function AutoComplete ({ recom }) {
     //GLOBAL states
-    const { darkMode } = useContext(AppContext);
     const { setSearch } = useContext(AppContext);
     const { btn, setBtn } = useContext(AppContext); 
     const autoSearch = () => {
         setSearch(recom)
         setBtn(!btn)
     }
-    //DarkMode Variables
-    const autocompleteDarMode = darkMode? "recom darkmode" : "recom";
+    //DarkMode Class Conditionals from custom
+    const autocompleteDarMode = useDarkTheme("recom");
     return(
         <div className={autocompleteDarMode} onClick={autoSearch} >
             <p>

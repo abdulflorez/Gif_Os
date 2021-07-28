@@ -1,6 +1,7 @@
 import './header.css'
 import {AppContext} from '../../context/AppContext'
 import { useContext } from 'react'
+import useDarkTheme from '../../hooks/useDarkTheme';
 
 function Header(){
     //GLOBAL states from storages
@@ -9,11 +10,12 @@ function Header(){
     const handleDarkMode = () => {
         setDarkMode(!darkMode);
     };
-    //DarkMode Conditionals
+    //Text for button
     const textButton = darkMode? "LIGHT MODE" : "DARK MODE"; 
+    //DarkMode Class Conditionals from custom
     const logoDarkmode = darkMode? "/resources/logo-mobile-modo-noct.svg" : "/resources/logo-desktop.svg";
-    const backgroundDarkMode = darkMode? "header darkmode" : "header";
-    const buttonDarkMode = darkMode? "header__btn darkmode" : "header__btn";
+    const backgroundDarkMode = useDarkTheme("header");
+    const buttonDarkMode = useDarkTheme("header__btn");
     return (
         <header className={backgroundDarkMode}>
             <img className="header__logo" src={logoDarkmode} alt="Logo gifos"/>

@@ -3,6 +3,7 @@ import AutoComplete from '../autocomplete/AutoComplete'
 import { AppContext } from '../../context/AppContext'
 import { useContext, useEffect } from 'react'
 import { suggest } from '../../utils/URL_requests'
+import useDarkTheme from '../../hooks/useDarkTheme'
 
 function Search() {
     //GLOBAL states from storage
@@ -21,18 +22,12 @@ function Search() {
             setBtn(!btn)
         }
     }
-
     //DarkMode Variables
-    const backGroundDarkMode = darkMode ? "search darkmode" : "search";
-    const titleDarkMode = darkMode ? "search__title darkmode" : "search__title";
-    const inputDarkMode = darkMode ? "search__input darkmode" : "search__input";
-    const buttonDarkMode = darkMode ? "search__btn darkmode" : "search__btn"
-    const autocompleteDarkMode = darkMode ? "search__autocomplete darkmode" : "search__autocomplete"
-    const subtitleDarkMode = darkMode ? "search__subtitle darkmode" : "search__subtitle"
-
-    //handlers
-
-
+    const backGroundDarkMode = useDarkTheme("search");
+    const titleDarkMode = useDarkTheme("search__title");
+    const inputDarkMode = useDarkTheme("search__input");
+    const buttonDarkMode = useDarkTheme("search__btn");
+    const autocompleteDarkMode = useDarkTheme("search__autocomplete");
     //------ FECHING SUGGEST -----
     useEffect(() => {
         if (inputSelect && search.length > 0) {
