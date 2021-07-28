@@ -7,14 +7,14 @@ function AutoComplete ({ recom }) {
     const { darkMode } = useContext(AppContext);
     const { setSearch } = useContext(AppContext);
     const { btn, setBtn } = useContext(AppContext); 
-    const impName = () => {
+    const autoSearch = () => {
         setSearch(recom)
         setBtn(!btn)
     }
     //DarkMode Variables
     const autocompleteDarMode = darkMode? "recom darkmode" : "recom";
     return(
-        <div className={autocompleteDarMode} onClick={impName} >
+        <div className={autocompleteDarMode} onClick={autoSearch} >
             <p>
                 {recom}
             </p>

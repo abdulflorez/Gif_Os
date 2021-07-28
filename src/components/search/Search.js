@@ -77,7 +77,6 @@ function Search() {
                 </button>
                 <div className={autocompleteDarkMode}>{componentAutoCompplete}</div>
             </div>
-            <h2 className={subtitleDarkMode}>Resultados de la búsqueda</h2>
         </section>
     )
 }
