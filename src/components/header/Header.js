@@ -6,13 +6,13 @@ import useDarkTheme from '../../hooks/useDarkTheme';
 function Header(){
     //GLOBAL states from storages
     const {darkMode, setDarkMode} = useContext(AppContext)
-    //HANDLER FOR DARM MODE ESTATE
+    //HANDLER FOR DARK MODE ESTATE
     const handleDarkMode = () => {
         setDarkMode(!darkMode);
     };
     //Text for button
     const textButton = darkMode? "LIGHT MODE" : "DARK MODE"; 
-    //DarkMode Class Conditionals from custom
+    //DarkMode Variables with custom Hook
     const logoDarkmode = darkMode? "/resources/logo-mobile-modo-noct.svg" : "/resources/logo-desktop.svg";
     const backgroundDarkMode = useDarkTheme("header");
     const buttonDarkMode = useDarkTheme("header__btn");
